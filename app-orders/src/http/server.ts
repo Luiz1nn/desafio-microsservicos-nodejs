@@ -1,5 +1,8 @@
+import '@opentelemetry/auto-instrumentations-node/register'
+
 import { randomUUID } from 'node:crypto'
 import { fastifyCors } from '@fastify/cors'
+import { trace } from '@opentelemetry/api'
 import { fastify } from 'fastify'
 import {
 	type ZodTypeProvider,
@@ -10,6 +13,7 @@ import { z } from 'zod'
 import { dispatchOrderCreated } from '../broker/messages/order-created.ts'
 import { db } from '../db/client.ts'
 import { schema } from '../db/schema/index.ts'
+import { tracer } from '../tracer/tracer.ts'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -43,6 +47,14 @@ app.post(
 			customerId: '0b41961f-c250-47ed-abef-2a81bfdd7708',
 			amount: 30,
 		})
+
+		const span = tracer.startSpan('eu acho que aqui ta dando merda')
+
+		span.setAttribute('teste', 'Hello World')
+
+		span.end()
+
+		trace.getActiveSpan()?.setAttribute('order_id', orderId)
 
 		dispatchOrderCreated({
 			orderId,

@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import amqp from 'amqplib'
 
 if (!process.env.BROKER_URL) {
