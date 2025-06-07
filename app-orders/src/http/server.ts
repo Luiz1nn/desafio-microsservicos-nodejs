@@ -7,6 +7,7 @@ import {
 	validatorCompiler,
 } from 'fastify-type-provider-zod'
 import { z } from 'zod'
+import { dispatchOrderCreated } from '../broker/messages/order-created.ts'
 import { db } from '../db/client.ts'
 import { schema } from '../db/schema/index.ts'
 
@@ -41,6 +42,14 @@ app.post(
 			id: orderId,
 			customerId: '0b41961f-c250-47ed-abef-2a81bfdd7708',
 			amount: 30,
+		})
+
+		dispatchOrderCreated({
+			orderId,
+			amount,
+			customer: {
+				id: '0b41961f-c250-47ed-abef-2a81bfdd7708',
+			},
 		})
 
 		return reply.status(201).send()
