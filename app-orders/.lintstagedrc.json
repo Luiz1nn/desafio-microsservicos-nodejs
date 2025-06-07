@@ -1,3 +1,3 @@
 {
-	"*.{ts}": "pnpm biome check --write ."
+	"*.ts": "pnpm biome check --write ."
 }
