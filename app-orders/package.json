@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --experimental-strip-types --watch --no-warnings src/http/server.ts"
+    "dev": "node --experimental-strip-types --watch --no-warnings src/http/server.ts",
+    "start": "node --experimental-strip-types --no-warnings src/http/server.ts"
   },
   "keywords": [],
   "author": "Luiz1nn",
@@ -31,6 +32,7 @@
     "@types/node": "^22.15.30",
     "@types/pg": "^8.15.4",
     "drizzle-kit": "^0.31.1",
-    "lint-staged": "^16.1.0"
+    "lint-staged": "^16.1.0",
+    "typescript": "^5.8.3"
   }
 }
