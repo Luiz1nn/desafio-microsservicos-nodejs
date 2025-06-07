@@ -25,7 +25,6 @@
     "@types/node": "^22.15.30",
     "@types/pg": "^8.15.4",
     "drizzle-kit": "^0.31.1",
-    "husky": "^9.1.7",
     "lint-staged": "^16.1.0"
   }
 }
