@@ -1,4 +1,6 @@
-FROM node:lts-alpine AS base
+FROM node:22-alpine AS base
+
+RUN npm install -g pnpm@10.11.1
 
 # ---------
 
@@ -8,7 +10,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --omit=dev
+RUN pnpm install --prod
 
 # ---------
 
@@ -32,4 +34,4 @@ EXPOSE 3333
 ENV PORT=3333
 ENV HOSTNAME="0.0.0.0"
 
-ENTRYPOINT ["npm", "run", "start"]
+ENTRYPOINT ["pnpm", "start"]
