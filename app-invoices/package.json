@@ -13,6 +13,7 @@
   "packageManager": "pnpm@10.11.1",
   "dependencies": {
     "@fastify/cors": "^11.0.1",
+    "amqplib": "^0.10.8",
     "drizzle-orm": "^0.44.2",
     "fastify": "^5.3.3",
     "fastify-type-provider-zod": "^4.0.2",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@tsconfig/node22": "^22.0.2",
+    "@types/amqplib": "^0.10.7",
     "@types/node": "^22.15.30",
     "drizzle-kit": "^0.31.1",
     "lint-staged": "^16.1.0",

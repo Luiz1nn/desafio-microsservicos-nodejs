@@ -1,3 +1,5 @@
+import '../broker/subscriber.ts'
+
 import { fastifyCors } from '@fastify/cors'
 import { fastify } from 'fastify'
 import {
