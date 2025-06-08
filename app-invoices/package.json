@@ -20,9 +20,11 @@
     "zod": "^3.25.56"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.15.30",
     "drizzle-kit": "^0.31.1",
+    "lint-staged": "^16.1.0",
     "typescript": "^5.8.3"
   }
 }
