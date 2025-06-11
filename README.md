@@ -1,6 +1,9 @@
 # Desafio Microsservicos Nodejs
 
 Este projeto consiste em uma arquitetura de microsserviços desenvolvida com Node.js e TypeScript, focada em alta disponibilidade, escalabilidade e observabilidade. A solução é composta por dois microsserviços independentes que se comunicam através de mensageria, com infraestrutura gerenciada como código (IaC) e ferramentas completas de monitoramento.
+
+![Logo do Projeto](./desafio-background.webp)
+
 ## Arquitetura
 ### Componentes Principais
 - **Microsserviços**:
